@@ -1,2 +1,1 @@
-# Cobol
-Programas em cobol do livro "Cobol para Microcomputadores"
+<h1 align="Cobol para Microcomputadores Exercicios Resolvidos</h1>
