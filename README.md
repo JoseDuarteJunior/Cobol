@@ -1,1 +1,1 @@
-<h1 align="center">Cobol Microcomputadores Exercicios</h1>
+<h1 align="center">Cobol para Microcomputadores Exercicios</h1>
