@@ -1,0 +1,53 @@
+      ******************************************************************
+      * Author:JOSE ANTONIO DUARTE JR.
+      * Date:13/11/2020
+      * Purpose:COBOL PARA MICROCOMPUTADORES EXERCICIO:2 PAG:48
+      * Tectonics: cobc
+      * Objetivo: CONTROLE DE CUSTO DE UMA MERCADORIA DE DISTRIBUIDORA
+      ******************************************************************
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. EXER3.
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES. DECIMAL-POINT IS COMMA.
+       DATA DIVISION.
+       FILE SECTION.
+       WORKING-STORAGE SECTION.
+       77  NOME-MERCADORIA      PIC X(20)        VALUE SPACES.
+       77  QUANTIDADE           PIC 9(04)        VALUE ZEROS.
+       77  PRECOUNITARIO        PIC 9(04)V99     VALUE ZEROS.
+       77  PRECOTOTAL           PIC 9(05)V99     VALUE ZEROS.
+       77  PRECOVENDA           PIC 9(06)V99     VALUE ZEROS.
+       77  PRECOVENDAF          PIC ZZZ.ZZZ,ZZ   VALUE ZEROS.
+       77  SAIR                 PIC X(01)        VALUE SPACES.
+       SCREEN SECTION.
+       01  LIMPA-TELA.
+           02 BLANK SCREEN.
+       01  TELA-BASE.
+           02 LINE 01 COLUMN 20
+           VALUE "DISTRIBUIDORA DE PRODUTOS DETERIORADOS".
+           02 LINE 03 COLUMN 20 VALUE "NOME DA MERCADORIA:".
+           02 LINE 05 COLUMN 20 VALUE "QUANTIDADE___".
+           02 LINE 07 COLUMN 20 VALUE "PRECO UNITARIO".
+           02 LINE 09 COLUMN 20 VALUE "PRECO TOTAL---".
+           02 LINE 11 COLUMN 20 VALUE "PRECO DE VENDA".
+       PROCEDURE DIVISION.
+       INICIO.
+           DISPLAY LIMPA-TELA.
+           DISPLAY TELA-BASE.
+           ACCEPT NOME-MERCADORIA AT 0339.
+           ACCEPT QUANTIDADE      AT 0531.
+           ACCEPT PRECOUNITARIO   AT 0735.
+           COMPUTE PRECOTOTAL = (QUANTIDADE * PRECOUNITARIO).
+           MOVE PRECOTOTAL TO PRECOVENDAF.
+           DISPLAY PRECOVENDAF AT 0932.
+           COMPUTE PRECOVENDA = (PRECOTOTAL * 1,30).
+           MOVE PRECOVENDA TO PRECOVENDAF.
+           DISPLAY PRECOVENDAF AT 1135.
+           ACCEPT SAIR AT 2020.
+           IF SAIR = 'S'
+               STOP RUN
+           ELSE
+               GO TO INICIO.
+       END PROGRAM EXER3.
+
