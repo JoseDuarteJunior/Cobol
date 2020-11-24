@@ -1,7 +1,7 @@
       ******************************************************************
       * Author:JOSE ANTONIO DUARTE JR.
       * Date:24/11/2020
-      * Purpose:COBOL PARA MICROCOMPUTADORES EXERCICIO:1 PAG:78
+      * Purpose:COBOL PARA MICROCOMPUTADORES EXERCICIO:1 PAG:72
       * Tectonics: cobc
       * Objetivo: CONSISTENCIA DE UMA DATA
       ******************************************************************
