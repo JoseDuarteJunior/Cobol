@@ -48,8 +48,6 @@
            02 LINE 10 COLUMN 12 VALUE "O MES DEVE SER ENTRE 1 E 12".
        01  MSG-ERRO-MES-2.
            02 LINE 10 COLUMN 12 VALUE "MES DEVE SER 1,3,5,7,8,10 OU 12".
-       01  MSG-LIMPA.
-           02 LINE 10 COLUMN 12 VALUE "                               ".
        PROCEDURE DIVISION.
        INICIO.
            DISPLAY LIMPA-TELA.
@@ -86,11 +84,12 @@
                    DISPLAY MSG-ERRO-DIA-2
                    ACCEPT CONFIRMA AT 1050
                    GO TO INICIO
-               END-IF
+               ELSE
                IF DIA-C = 29
                    GO TO VERIFICA-BISSEXTO
                END-IF
-           GO TO FINALIZA
+           ELSE
+               GO TO FINALIZA
            END-IF.
        VERIFICA-BISSEXTO.
            DISPLAY "VERIFICA BISSEXT0" AT 1020.
